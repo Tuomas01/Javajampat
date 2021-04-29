@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Loppuprojekti</string>
+    <string name="trainingButton">training</string>
+    <string name="foodbutton">foodButton</string>
+    <string name="homebutton">homeButton</string>
+    <string name="sleepbutton">sleepButton</string>
+    <string name="profilebutton">profileButton</string>
 </resources>
