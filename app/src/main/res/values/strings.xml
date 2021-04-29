@@ -5,4 +5,6 @@
     <string name="homebutton">homeButton</string>
     <string name="sleepbutton">sleepButton</string>
     <string name="profilebutton">profileButton</string>
+    <string name="urheilusovellus">Urheilusovellus</string>
+    <string name="menu">menu</string>
 </resources>
