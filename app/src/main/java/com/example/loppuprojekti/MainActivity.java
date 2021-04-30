@@ -38,4 +38,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(home);
     }
 
+    public void uniButtonPressed(View V) {
+        Intent uni = new Intent(this, UniSivu.class);
+        startActivity(uni);
+    }
+
+    public void ravintoButtonPressed(View V) {
+        Intent ravinto = new Intent(this, RavintoSivu.class);
+        startActivity(ravinto);
+    }
 }
