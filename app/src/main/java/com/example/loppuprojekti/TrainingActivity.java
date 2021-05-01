@@ -1,19 +1,22 @@
 package com.example.loppuprojekti;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.android.material.navigation.NavigationView;
+
 public class TrainingActivity extends AppCompatActivity {
 
     ImageView trainingIcon;
     Toolbar topbar;
+    DrawerLayout menulayout;
+    NavigationView menuitems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +24,16 @@ public class TrainingActivity extends AppCompatActivity {
 
         trainingIcon = findViewById(R.id.trainingButton);
         topbar = findViewById(R.id.toolbar);
+        menulayout = findViewById(R.id.drawerLayout);
+        menuitems = findViewById(R.id.menuView);
+
         setSupportActionBar(topbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, menulayout, topbar, R.string.drawerOpen, R.string.drawerClose);
+        menulayout.addDrawerListener(toggle);
+        toggle.syncState();
+
         trainingIcon.setBackgroundColor(0xFF2196F3);
     }
 

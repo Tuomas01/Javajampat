@@ -1,26 +1,39 @@
 package com.example.loppuprojekti;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.android.material.navigation.NavigationView;
+
 public class UniSivu extends AppCompatActivity {
 
     Toolbar topbar;
     ImageView sleepIcon;
-
+    DrawerLayout menulayout;
+    NavigationView menuitems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uni_sivu);
 
         topbar = findViewById(R.id.toolbar);
+        menulayout = findViewById(R.id.drawerLayout);
+        menuitems = findViewById(R.id.menuView);
+        sleepIcon = findViewById(R.id.sleepButton);
+
         setSupportActionBar(topbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        sleepIcon = findViewById(R.id.sleepButton);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, menulayout, topbar, R.string.drawerOpen, R.string.drawerClose);
+        menulayout.addDrawerListener(toggle);
+        toggle.syncState();
+
         sleepIcon.setBackgroundColor(0xFF2196F3);
     }
 
