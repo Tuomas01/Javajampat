@@ -11,24 +11,28 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class TrainingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class UniSivu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    ImageView trainingIcon;
     Toolbar topbar;
+    ImageView sleepIcon;
     DrawerLayout menulayout;
     NavigationView menuitems;
+    TextView timeslept;
+    String nimi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_training);
-
-        trainingIcon = findViewById(R.id.trainingButton);
+        setContentView(R.layout.activity_uni_sivu);
         topbar = findViewById(R.id.toolbar);
         menulayout = findViewById(R.id.drawerLayout);
         menuitems = findViewById(R.id.menuView);
+        sleepIcon = findViewById(R.id.sleepButton);
+        timeslept = findViewById(R.id.timeslept);
+        timeslept.setText(nimi);
 
         setSupportActionBar(topbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -40,17 +44,17 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
 
         menuitems.setNavigationItemSelectedListener(this);
 
-        trainingIcon.setBackgroundColor(0xFF2196F3);
-    }
-
-    public void openTraining(View V) {
-        Intent training = new Intent(this, TrainingActivity.class);
-        startActivity(training);
+        sleepIcon.setBackgroundColor(0xFF2196F3);
     }
 
     public void profileButtonPressed(View V) {
         Intent profile = new Intent(this, ProfileActivity.class);
         startActivity(profile);
+    }
+
+    public void openTraining(View V) {
+        Intent training = new Intent(this, TrainingActivity.class);
+        startActivity(training);
     }
 
     public void homeButtonPressed(View V) {
@@ -68,9 +72,12 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
         startActivity(ravinto);
     }
 
+    public void getName(ProfileActivity profileActivity) {
+        nimi = profileActivity.profileInformation.getName();
+    }
+
     @Override
     public void onBackPressed() {
-
         if(menulayout.isDrawerOpen(GravityCompat.START)) {
             menulayout.closeDrawer(GravityCompat.START);
         }

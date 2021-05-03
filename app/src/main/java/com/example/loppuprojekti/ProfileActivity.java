@@ -8,24 +8,40 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class TrainingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-    ImageView trainingIcon;
+public class ProfileActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    public static String TAG = "Kukkuu";
+    ImageView profileIcon;
     Toolbar topbar;
     DrawerLayout menulayout;
     NavigationView menuitems;
+    ProfileInformation profileInformation;
+    EditText profileName;
+    EditText profileAge;
+    EditText profileSleep;
+    EditText profileCalories;
+    EditText profileHeight;
+    EditText profileWeight;
+    public static String name;
+    int age;
+    int sleep;
+    int calories;
+    int height;
+    int weight;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_training);
+        setContentView(R.layout.activity_profile);
 
-        trainingIcon = findViewById(R.id.trainingButton);
+        profileIcon = findViewById(R.id.profiiliButton);
         topbar = findViewById(R.id.toolbar);
         menulayout = findViewById(R.id.drawerLayout);
         menuitems = findViewById(R.id.menuView);
@@ -40,7 +56,12 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
 
         menuitems.setNavigationItemSelectedListener(this);
 
-        trainingIcon.setBackgroundColor(0xFF2196F3);
+        profileIcon.setBackgroundColor(0xFF2196F3);
+    }
+
+    public void homeButtonPressed(View V) {
+        Intent profile = new Intent(this, MainActivity.class);
+        startActivity(profile);
     }
 
     public void openTraining(View V) {
@@ -53,11 +74,6 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
         startActivity(profile);
     }
 
-    public void homeButtonPressed(View V) {
-        Intent home = new Intent(this, MainActivity.class);
-        startActivity(home);
-    }
-
     public void uniButtonPressed(View V) {
         Intent uni = new Intent(this, UniSivu.class);
         startActivity(uni);
@@ -66,6 +82,24 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
     public void ravintoButtonPressed(View V) {
         Intent ravinto = new Intent(this, RavintoSivu.class);
         startActivity(ravinto);
+    }
+
+    public void saveInformationButtonPressed(View V) {
+        profileName = findViewById(R.id.nameInput);
+        profileAge = findViewById(R.id.ageInput);
+        profileSleep = findViewById(R.id.sleepInput);
+        profileCalories = findViewById(R.id.caloriesInput);
+        profileHeight = findViewById(R.id.heightInput);
+        profileWeight = findViewById(R.id.weightInput);
+
+        name = profileName.getText().toString();
+        age = Integer.parseInt(profileAge.getText().toString());
+        sleep = Integer.parseInt(profileSleep.getText().toString());
+        calories = Integer.parseInt(profileCalories.getText().toString());
+        height = Integer.parseInt(profileHeight.getText().toString());
+        weight = Integer.parseInt(profileWeight.getText().toString());
+        profileInformation = new ProfileInformation(name, age, sleep, calories, height, weight);
+        Log.d(TAG, profileInformation.toString());
     }
 
     @Override
