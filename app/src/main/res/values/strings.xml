@@ -11,4 +11,12 @@
     <string name="new_training">New training</string>
     <string name="drawerOpen">Open navigation drawer</string>
     <string name="drawerClose">Close navigation drawer</string>
+    <string name="profiili">Profiili</string>
+    <string name="uni">Unen määrä (h)</string>
+    <string name="kalorit">Kalorit per päivä</string>
+    <string name="pituus">Pituus (cm)</string>
+    <string name="paino">Paino (kg)</string>
+    <string name="age">Ikä</string>
+    <string name="name">Nimi</string>
+    <string name="tallenna">Tallenna tiedot</string>
 </resources>

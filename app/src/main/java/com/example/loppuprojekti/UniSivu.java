@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -20,15 +21,18 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
     ImageView sleepIcon;
     DrawerLayout menulayout;
     NavigationView menuitems;
+    TextView timeslept;
+    String nimi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uni_sivu);
-
         topbar = findViewById(R.id.toolbar);
         menulayout = findViewById(R.id.drawerLayout);
         menuitems = findViewById(R.id.menuView);
         sleepIcon = findViewById(R.id.sleepButton);
+        timeslept = findViewById(R.id.timeslept);
+        timeslept.setText(nimi);
 
         setSupportActionBar(topbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -68,9 +72,12 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
         startActivity(ravinto);
     }
 
+    public void getName(ProfileActivity profileActivity) {
+        nimi = profileActivity.profileInformation.getName();
+    }
+
     @Override
     public void onBackPressed() {
-
         if(menulayout.isDrawerOpen(GravityCompat.START)) {
             menulayout.closeDrawer(GravityCompat.START);
         }

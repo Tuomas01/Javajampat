@@ -8,18 +8,34 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class ProfileActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    public static String TAG = "Kukkuu";
     ImageView profileIcon;
     Toolbar topbar;
     DrawerLayout menulayout;
     NavigationView menuitems;
+    ProfileInformation profileInformation;
+    EditText profileName;
+    EditText profileAge;
+    EditText profileSleep;
+    EditText profileCalories;
+    EditText profileHeight;
+    EditText profileWeight;
+    public static String name;
+    int age;
+    int sleep;
+    int calories;
+    int height;
+    int weight;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +82,24 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
     public void ravintoButtonPressed(View V) {
         Intent ravinto = new Intent(this, RavintoSivu.class);
         startActivity(ravinto);
+    }
+
+    public void saveInformationButtonPressed(View V) {
+        profileName = findViewById(R.id.nameInput);
+        profileAge = findViewById(R.id.ageInput);
+        profileSleep = findViewById(R.id.sleepInput);
+        profileCalories = findViewById(R.id.caloriesInput);
+        profileHeight = findViewById(R.id.heightInput);
+        profileWeight = findViewById(R.id.weightInput);
+
+        name = profileName.getText().toString();
+        age = Integer.parseInt(profileAge.getText().toString());
+        sleep = Integer.parseInt(profileSleep.getText().toString());
+        calories = Integer.parseInt(profileCalories.getText().toString());
+        height = Integer.parseInt(profileHeight.getText().toString());
+        weight = Integer.parseInt(profileWeight.getText().toString());
+        profileInformation = new ProfileInformation(name, age, sleep, calories, height, weight);
+        Log.d(TAG, profileInformation.toString());
     }
 
     @Override
