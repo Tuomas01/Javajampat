@@ -28,4 +28,5 @@
     <string name="kalorisuositus">Keskimäärin naiset tarvitsevat noin 2000 kaloria päivässä ja miehet noin 2500 kaloria.</string>
     <string name="kaloritarpeenlaskeminen">Karkean arvon omasta kaloritarpeesta saa kertomalla oman painon kolmellakymmenellä.
         Esimerkiksi, jos painat 80 kg, kaloritarpeesi on noin 80 * 30 = 2400 kaloria. Kaloritarpeeseen vaikuttaa myös ikä, pituus ja sukupuoli</string>
+    <string name="arvoisa">Arvoisa käyttäjä</string>
 </resources>

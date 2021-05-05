@@ -46,7 +46,7 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
         profileName = findViewById(R.id.nameInput);
 
         Intent intent= getIntent();
-        unisivunimi.setText(intent.getStringExtra(ProfileActivity.name));
+        // unisivunimi.setText(intent.getStringExtra(ProfileActivity.name));
         setSupportActionBar(topbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
