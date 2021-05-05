@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         menulayout = findViewById(R.id.drawerLayout);
         menuitems = findViewById(R.id.menuView);
         tervehdys = findViewById(R.id.Tervehdysviesti);
-
-        tervehdys.setText("Hei, ");
+        tervehdys.setText("Hei käyttäjä");
         setSupportActionBar(topbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         Drawable forest = getResources().getDrawable(R.drawable.forest);
@@ -52,11 +51,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         homeicon.setBackgroundColor(0xFF2196F3);
     }
 
+    /**
+     * Metodi profileButtonPressed avaa profiiliaktiviteetin.
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Tuomas Heikkilä
+     */
     public void profileButtonPressed(View V) {
         Intent profile = new Intent(this, ProfileActivity.class);
         startActivity(profile);
     }
 
+    /**
+     * Metodi openTraining avaa training sivun aktiviteetin
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Tuomas Heikkilä
+     */
     public void openTraining(View V) {
         Intent training = new Intent(this, TrainingActivity.class);
         startActivity(training);
