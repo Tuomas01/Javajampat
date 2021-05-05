@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         topbar = findViewById(R.id.toolbar);
         menulayout = findViewById(R.id.drawerLayout);
         menuitems = findViewById(R.id.menuView);
-
-        tervehdys.setText("Hei, ");
+        tervehdys = findViewById(R.id.Tervehdysviesti);
+        tervehdys.setText("Hei käyttäjä");
         setSupportActionBar(topbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         Drawable forest = getResources().getDrawable(R.drawable.forest);
@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
     @Override
     public void onBackPressed() {
+
         if(menulayout.isDrawerOpen(GravityCompat.START)) {
             menulayout.closeDrawer(GravityCompat.START);
         }
@@ -126,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
         switch (item.getItemId()) {
             case R.id.addnew:
                 Intent training = new Intent(this, AddTrainingActivity.class);
@@ -159,6 +161,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
         }
+
         menulayout.closeDrawer(GravityCompat.START);
         return true;
     }

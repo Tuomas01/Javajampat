@@ -1,16 +1,20 @@
 package com.example.loppuprojekti;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,13 +22,12 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class AddTrainingActivity extends AppCompatActivity {
-
+public class AddTrainingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     ImageView trainingIcon;
     Toolbar topbar;
     DrawerLayout menulayout;
     NavigationView menuitems;
-
+    public static String TAG = "kukkuu";
     private EditText editTextKesto;
     private EditText editTextKalorit;
     private EditText editTextAskeleet;
@@ -49,7 +52,7 @@ public class AddTrainingActivity extends AppCompatActivity {
         menulayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        //menuitems.setNavigationItemSelectedListener(this);
+        menuitems.setNavigationItemSelectedListener(this);
         menuitems.setCheckedItem(R.id.addnew);
 
         //preferences = getSharedPreferences(sharedPreferenceName, Context.MODE_PRIVATE);
@@ -112,5 +115,56 @@ public class AddTrainingActivity extends AppCompatActivity {
     public void ravintoButtonPressed(View V) {
         Intent ravinto = new Intent(this, RavintoSivu.class);
         startActivity(ravinto);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if(menulayout.isDrawerOpen(GravityCompat.START)) {
+            menulayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.addnew:
+                Intent training = new Intent(this, AddTrainingActivity.class);
+                startActivity(training);
+                Log.d(TAG, "training selected");
+                break;
+            case R.id.trainingshortcut:
+                Intent trainingPage = new Intent(this, TrainingActivity.class);
+                startActivity(trainingPage);
+                Log.d(TAG, "trainingsivu selected");
+                break;
+            case R.id.ravintoshortcut:
+                Intent ravinto = new Intent(this, RavintoSivu.class);
+                startActivity(ravinto);
+                Log.d(TAG, "ravinto selected");
+                break;
+            case R.id.homeshortcut:
+                Intent home = new Intent(this, MainActivity.class);
+                startActivity(home);
+                Log.d(TAG, "home selected");
+                break;
+            case R.id.unisivushortcut:
+                Intent uni = new Intent(this, UniSivu.class);
+                startActivity(uni);
+                Log.d(TAG, "uni selected");
+                break;
+            case R.id.profiilishortcut:
+                Intent profiili = new Intent(this, ProfileActivity.class);
+                startActivity(profiili);
+                Log.d(TAG, "profiili selected");
+                break;
+        }
+
+        menulayout.closeDrawer(GravityCompat.START);
+        return true;
     }
 }

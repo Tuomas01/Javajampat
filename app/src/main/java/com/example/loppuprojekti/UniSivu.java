@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,6 +25,8 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
     NavigationView menuitems;
     TextView timeslept;
     String nimi;
+    TextView unisivunimi;
+    EditText profileName;
 
     /**
      * Metodi onCreate tekee navigointipalkin, ja eri napit jotka ovat liitettynä siihen.
@@ -39,7 +42,11 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
         menulayout = findViewById(R.id.drawerLayout);
         menuitems = findViewById(R.id.menuView);
         sleepIcon = findViewById(R.id.sleepButton);
+        unisivunimi = findViewById(R.id.naytaNimi);
+        profileName = findViewById(R.id.nameInput);
 
+        Intent intent= getIntent();
+        unisivunimi.setText(intent.getStringExtra(ProfileActivity.name));
         setSupportActionBar(topbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
