@@ -82,6 +82,7 @@ public class AddTrainingActivity extends AppCompatActivity {
 
         Harjoitus harjoitus = new Harjoitus(kestofinal, kaloritfinal, askeleetfinal);
 
+        //Lisää uuden harjoituksen SharedPreferenceen
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(messageKey, harjoitus.toString());
         Log.d("kukkuu", harjoitus.toString());

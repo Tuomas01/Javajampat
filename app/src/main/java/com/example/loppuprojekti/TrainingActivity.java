@@ -31,9 +31,7 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
     Toolbar topbar;
     DrawerLayout menulayout;
     NavigationView menuitems;
-
     TextView harjoitus;
-    //ListView harjoituksetLista;
 
     public ArrayList<String> harjoitukset;
 
@@ -70,8 +68,7 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
         String value = sharedPreferences.getString("Viimeisin","Ei harjoituksia");
         harjoitukset.add(value);
 
-
-        //HashSetin tallennus
+        //ArrayListin tiedot tallennetaan HashSettiin, joka tallennetaan SharedPreferenceen.
         SharedPreferences preferences2 = getSharedPreferences("myKey2", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences2.edit();
         Set<String> set = new HashSet<String>();
@@ -80,17 +77,10 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
         editor.putStringSet(messageKey2, set);
         editor.commit();
 
-
-        //Listalta otto
-        SharedPreferences sharedPreferences2 = getSharedPreferences("myKey2", MODE_PRIVATE);
-        //String value2 = sharedPreferences2.getString("vika","Ei harjoituksia");
-
+        //Setin tiedot listalle
         List<String> list = new ArrayList<String>(set);
-        //list.add(value2);
         ListView harjoituksetLista = findViewById(R.id.harjoitukset);
         harjoituksetLista.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list));
-
-        //Set<String> setti = harjoitukset.getStringSet("key", null);
 
     }
 
