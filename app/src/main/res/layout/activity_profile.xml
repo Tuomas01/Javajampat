@@ -221,10 +221,10 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/sleepInput"
+            app:layout_constraintBottom_toTopOf="@+id/guideline50"
             app:layout_constraintEnd_toStartOf="@+id/guideline50v"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameInput" />
+            app:layout_constraintTop_toTopOf="@+id/guideline25" />
 
         <TextView
             android:id="@+id/textView5"
@@ -234,40 +234,42 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/caloriesInput"
+            app:layout_constraintBottom_toTopOf="@+id/guideline50"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline50v"
-            app:layout_constraintTop_toBottomOf="@+id/ageInput" />
+            app:layout_constraintTop_toTopOf="@+id/guideline25" />
 
         <EditText
             android:id="@+id/sleepInput"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:gravity="center_horizontal"
             android:importantForAutofill="no"
             android:inputType="number"
             android:labelFor="@+id/sleepInput"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/guideline50"
             app:layout_constraintEnd_toStartOf="@+id/guideline50v"
             app:layout_constraintHorizontal_bias="0.50"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <EditText
             android:id="@+id/caloriesInput"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:gravity="center_horizontal"
             android:importantForAutofill="no"
             android:inputType="number"
             android:labelFor="@+id/caloriesInput"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/guideline50"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.50"
-            app:layout_constraintStart_toStartOf="@+id/guideline50v" />
+            app:layout_constraintStart_toStartOf="@+id/guideline50v"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <TextView
             android:id="@+id/height"
@@ -277,7 +279,6 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/heightInput"
             app:layout_constraintEnd_toStartOf="@+id/guideline50v"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -291,9 +292,8 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/weightInput"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.524"
+            app:layout_constraintHorizontal_bias="0.482"
             app:layout_constraintStart_toStartOf="@+id/guideline50v"
             app:layout_constraintTop_toTopOf="@+id/guideline50" />
 
@@ -301,31 +301,33 @@
             android:id="@+id/heightInput"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:gravity="center_horizontal"
             android:importantForAutofill="no"
             android:inputType="number"
             android:labelFor="@+id/heightInput"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintEnd_toStartOf="@+id/guideline50v"
             app:layout_constraintHorizontal_bias="0.50"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/height" />
 
         <EditText
             android:id="@+id/weightInput"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:gravity="center_horizontal"
             android:importantForAutofill="no"
             android:inputType="number"
             android:labelFor="@+id/weightInput"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.506"
-            app:layout_constraintStart_toStartOf="@+id/guideline50v" />
+            app:layout_constraintHorizontal_bias="0.50"
+            app:layout_constraintStart_toStartOf="@+id/guideline50v"
+            app:layout_constraintTop_toBottomOf="@+id/weight" />
 
         <TextView
             android:id="@+id/textView"
@@ -337,8 +339,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guideline25"
             app:layout_constraintEnd_toStartOf="@+id/guideline50v"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView2"
@@ -350,8 +351,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guideline25"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline50v"
-            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+            app:layout_constraintStart_toStartOf="@+id/guideline50v" />
 
         <EditText
             android:id="@+id/nameInput"
@@ -393,10 +393,10 @@
             android:onClick="saveInformationButtonPressed"
             android:text="@string/tallenna"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/appBarLayoutBottom"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+            app:layout_constraintTop_toTopOf="@+id/guideline50" />
 
         <TextView
             android:id="@+id/tiedotTallennettu"
@@ -406,20 +406,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/saveProfileData" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.70"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.15"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
