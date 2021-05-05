@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,7 +16,7 @@ import android.widget.ImageView;
 import com.google.android.material.navigation.NavigationView;
 
 public class TrainingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    public static String TAG = "Kukkuu";
     ImageView trainingIcon;
     Toolbar topbar;
     DrawerLayout menulayout;
@@ -39,6 +40,7 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
         toggle.syncState();
 
         menuitems.setNavigationItemSelectedListener(this);
+        menuitems.setCheckedItem(R.id.addnew);
 
         trainingIcon.setBackgroundColor(0xFF2196F3);
     }
@@ -86,8 +88,32 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
             case R.id.addnew:
                 Intent training = new Intent(this, TrainingActivity.class);
                 startActivity(training);
+                Log.d(TAG, "training selected");
+                break;
+            case R.id.ravintoshortcut:
+                Intent ravinto = new Intent(this, RavintoSivu.class);
+                startActivity(ravinto);
+                Log.d(TAG, "ravinto selected");
+                break;
+            case R.id.homeshortcut:
+                Intent home = new Intent(this, MainActivity.class);
+                startActivity(home);
+                Log.d(TAG, "home selected");
+                break;
+            case R.id.unisivushortcut:
+                Intent uni = new Intent(this, UniSivu.class);
+                startActivity(uni);
+                Log.d(TAG, "uni selected");
+                break;
+            case R.id.profiilishortcut:
+                Intent profiili = new Intent(this, ProfileActivity.class);
+                startActivity(profiili);
+                Log.d(TAG, "profiili selected");
+                break;
+
         }
 
+        menulayout.closeDrawer(GravityCompat.START);
         return true;
     }
 }

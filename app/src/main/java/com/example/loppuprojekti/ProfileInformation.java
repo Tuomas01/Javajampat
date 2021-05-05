@@ -7,6 +7,15 @@ public class ProfileInformation {
     int calories;
     int height;
     int weight;
+    private static final ProfileInformation ourInstance = new ProfileInformation();
+
+    public static ProfileInformation getInstance() {
+        return ourInstance;
+    }
+
+    private ProfileInformation() {
+
+    }
 
     public ProfileInformation(String name, int age, int sleep, int calories, int height, int weight) {
         this.name = name;

@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,13 +17,12 @@ import android.widget.TextView;
 import com.google.android.material.navigation.NavigationView;
 
 public class UniSivu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    public static String TAG = "Kukkuu";
     Toolbar topbar;
     ImageView sleepIcon;
     DrawerLayout menulayout;
     NavigationView menuitems;
     TextView timeslept;
-    String nimi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,17 +32,19 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
         menuitems = findViewById(R.id.menuView);
         sleepIcon = findViewById(R.id.sleepButton);
         timeslept = findViewById(R.id.timeslept);
-        timeslept.setText(nimi);
-
         setSupportActionBar(topbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        ProfileInformation prof = ProfileInformation.getInstance();
+        int pituus = prof.getHeight();
+        Log.d(TAG, "pituus on" + pituus);
         menuitems.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, menulayout, topbar, R.string.drawerOpen, R.string.drawerClose);
         menulayout.addDrawerListener(toggle);
         toggle.syncState();
 
         menuitems.setNavigationItemSelectedListener(this);
+        menuitems.setCheckedItem(R.id.unisivushortcut);
 
         sleepIcon.setBackgroundColor(0xFF2196F3);
     }
@@ -72,10 +74,6 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
         startActivity(ravinto);
     }
 
-    public void getName(ProfileActivity profileActivity) {
-        nimi = profileActivity.profileInformation.getName();
-    }
-
     @Override
     public void onBackPressed() {
         if(menulayout.isDrawerOpen(GravityCompat.START)) {
@@ -93,8 +91,32 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
             case R.id.addnew:
                 Intent training = new Intent(this, TrainingActivity.class);
                 startActivity(training);
+                Log.d(TAG, "training selected");
+                break;
+            case R.id.ravintoshortcut:
+                Intent ravinto = new Intent(this, RavintoSivu.class);
+                startActivity(ravinto);
+                Log.d(TAG, "ravinto selected");
+                break;
+            case R.id.homeshortcut:
+                Intent home = new Intent(this, MainActivity.class);
+                startActivity(home);
+                Log.d(TAG, "home selected");
+                break;
+            case R.id.unisivushortcut:
+                Intent uni = new Intent(this, UniSivu.class);
+                startActivity(uni);
+                Log.d(TAG, "uni selected");
+                break;
+            case R.id.profiilishortcut:
+                Intent profiili = new Intent(this, ProfileActivity.class);
+                startActivity(profiili);
+                Log.d(TAG, "profiili selected");
+                break;
+
         }
 
+        menulayout.closeDrawer(GravityCompat.START);
         return true;
     }
 }

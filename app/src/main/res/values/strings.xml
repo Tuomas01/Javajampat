@@ -8,7 +8,7 @@
     <string name="urheilusovellus">Urheilusovellus</string>
     <string name="menu">menu</string>
     <string name="settings">Settings</string>
-    <string name="new_training">New training</string>
+    <string name="new_training">Uusi harjoitus</string>
     <string name="drawerOpen">Open navigation drawer</string>
     <string name="drawerClose">Close navigation drawer</string>
     <string name="profiili">Profiili</string>
@@ -19,4 +19,9 @@
     <string name="age">Ikä</string>
     <string name="name">Nimi</string>
     <string name="tallenna">Tallenna tiedot</string>
+    <string name="ravintosivu">Ravintosivu</string>
+    <string name="kotisivu">Kotisivu</string>
+    <string name="unisivu">Unisivu</string>
+    <string name="profiilisivu">Profiilisivu</string>
+    <string name="harjoitukset">Harjoitukset</string>
 </resources>

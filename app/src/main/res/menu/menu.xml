@@ -8,9 +8,25 @@
             android:icon="@drawable/plus"
             android:title="@string/new_training" />
         <item
-            android:id="@+id/settings"
-            android:title="@string/settings"
-            android:icon="@drawable/settings"/>
+            android:id="@+id/trainingshortcut"
+            android:title="@string/harjoitukset"
+            android:icon="@drawable/training"/>
+        <item
+            android:id="@+id/ravintoshortcut"
+            android:title="@string/ravintosivu"
+            android:icon="@drawable/eating"/>
+        <item
+            android:id="@+id/homeshortcut"
+            android:title="@string/kotisivu"
+            android:icon="@drawable/home"/>
+        <item
+            android:id="@+id/unisivushortcut"
+            android:title="@string/unisivu"
+            android:icon="@drawable/bed"/>
+        <item
+            android:id="@+id/profiilishortcut"
+            android:title="@string/profiilisivu"
+            android:icon="@drawable/profile"/>
 
     </group>
 
