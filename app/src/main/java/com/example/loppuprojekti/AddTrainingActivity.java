@@ -61,6 +61,11 @@ public class AddTrainingActivity extends AppCompatActivity implements Navigation
 
     }
 
+    /**
+     * Lisää harjoituksen keston, poltetut kalorit ja askeleet editTexteistä uuteen harjoitus-olioon ja avaa harjoitussivun.
+     * @param v tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Niko Ala-aho
+     */
     public void addTrainingClicked(View v){
 
         SharedPreferences preferences = getSharedPreferences("myKey", MODE_PRIVATE);
@@ -80,6 +85,7 @@ public class AddTrainingActivity extends AppCompatActivity implements Navigation
 
         Harjoitus harjoitus = new Harjoitus(kestofinal, kaloritfinal, askeleetfinal);
 
+        //Lisää uuden harjoituksen SharedPreferenceen
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(messageKey, harjoitus.toString());
         Log.d("kukkuu", harjoitus.toString());
@@ -92,26 +98,52 @@ public class AddTrainingActivity extends AppCompatActivity implements Navigation
 
 
 
+    /**
+     * Avaa harjoitussivun aktiviteetin.
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Niko Ala-aho
+     */
     public void openTraining(View V) {
         Intent training = new Intent(this, TrainingActivity.class);
         startActivity(training);
     }
 
+    /**
+     * Avaa profiilisivun aktiviteetin.
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Niko Ala-aho
+     */
     public void profileButtonPressed(View V) {
         Intent profile = new Intent(this, ProfileActivity.class);
         startActivity(profile);
     }
 
+    /**
+     * Avaa kotisivun aktiviteetin.
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Niko Ala-aho
+     */
     public void homeButtonPressed(View V) {
         Intent home = new Intent(this, MainActivity.class);
         startActivity(home);
     }
 
+    /**
+     * Avaa unisivun aktiviteetin.
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Niko Ala-aho
+     */
     public void uniButtonPressed(View V) {
         Intent uni = new Intent(this, UniSivu.class);
         startActivity(uni);
     }
 
+
+    /**
+     * Avaa ravintosivun aktiviteetin.
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Niko Ala-aho
+     */
     public void ravintoButtonPressed(View V) {
         Intent ravinto = new Intent(this, RavintoSivu.class);
         startActivity(ravinto);
