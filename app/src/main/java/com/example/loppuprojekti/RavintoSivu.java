@@ -173,7 +173,7 @@ public class RavintoSivu extends AppCompatActivity implements NavigationView.OnN
                 break;
 
         }
-
+        // kun nappulasta, joka avaa aktiviteetin painaa, sulje drawer menu ja avaa aktiviteetti
         menulayout.closeDrawer(GravityCompat.START);
         return true;
     }
