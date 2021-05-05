@@ -89,7 +89,7 @@ public class RavintoSivu extends AppCompatActivity implements NavigationView.OnN
 
         switch (item.getItemId()) {
             case R.id.addnew:
-                Intent training = new Intent(this, TrainingActivity.class);
+                Intent training = new Intent(this, AddTrainingActivity.class);
                 startActivity(training);
                 Log.d(TAG, "training selected");
                 break;

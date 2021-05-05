@@ -7,13 +7,23 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.util.Log;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class TrainingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static String TAG = "Kukkuu";
@@ -21,6 +31,15 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
     Toolbar topbar;
     DrawerLayout menulayout;
     NavigationView menuitems;
+
+    TextView harjoitus;
+    //ListView harjoituksetLista;
+
+    public ArrayList<String> harjoitukset;
+
+    private final String sharedPreferenceName = "HarjoitusLista";
+    private final String messageKey2 = "vika";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +62,35 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
         menuitems.setCheckedItem(R.id.addnew);
 
         trainingIcon.setBackgroundColor(0xFF2196F3);
+
+        //ArrayList ja uusi harjoitus listalle
+        harjoitukset = new ArrayList<String>();
+        SharedPreferences sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE);
+        String value = sharedPreferences.getString("Viimeisin","Ei harjoituksia");
+        harjoitukset.add(value);
+
+
+        //HashSetin tallennus
+        SharedPreferences preferences2 = getSharedPreferences("myKey2", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences2.edit();
+        Set<String> set = new HashSet<String>();
+        set.addAll(harjoitukset);
+
+        editor.putStringSet(messageKey2, set);
+        editor.commit();
+
+
+        //Listalta otto
+        SharedPreferences sharedPreferences2 = getSharedPreferences("myKey2", MODE_PRIVATE);
+        //String value2 = sharedPreferences2.getString("vika","Ei harjoituksia");
+
+        List<String> list = new ArrayList<String>(set);
+        //list.add(value2);
+        ListView harjoituksetLista = findViewById(R.id.harjoitukset);
+        harjoituksetLista.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list));
+
+        //Set<String> setti = harjoitukset.getStringSet("key", null);
+
     }
 
     public void openTraining(View V) {
@@ -86,7 +134,7 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
 
         switch (item.getItemId()) {
             case R.id.addnew:
-                Intent training = new Intent(this, TrainingActivity.class);
+                Intent training = new Intent(this, AddTrainingActivity.class);
                 startActivity(training);
                 Log.d(TAG, "training selected");
                 break;
