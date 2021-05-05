@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Loppuprojekti">
-        <activity android:name="RavintoSivu"/>
-        <activity android:name="UniSivu"/>
-        <activity android:name="MainActivity"/>
-        <activity android:name="ProfileActivity"/>
-        <activity android:name="TrainingActivity">
+        <activity android:name=".AddTrainingActivity"></activity>
+        <activity android:name=".RavintoSivu" />
+        <activity android:name=".UniSivu" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".TrainingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -84,7 +84,7 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
 
         switch (item.getItemId()) {
             case R.id.addnew:
-                Intent training = new Intent(this, TrainingActivity.class);
+                Intent training = new Intent(this, AddTrainingActivity.class);
                 startActivity(training);
         }
 

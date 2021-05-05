@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void newFromMenuPressed(View V) {
-        Intent training = new Intent(this, TrainingActivity.class);
-        startActivity(training);
+        Intent addTraining = new Intent(this, AddTrainingActivity.class);
+        startActivity(addTraining);
     }
 
     @Override
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()) {
             case R.id.addnew:
-                Intent training = new Intent(this, TrainingActivity.class);
+                Intent training = new Intent(this, AddTrainingActivity.class);
                 startActivity(training);
         }
 
