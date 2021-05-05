@@ -23,6 +23,8 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
     DrawerLayout menulayout;
     NavigationView menuitems;
     TextView timeslept;
+    String nimi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +34,11 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
         menuitems = findViewById(R.id.menuView);
         sleepIcon = findViewById(R.id.sleepButton);
         timeslept = findViewById(R.id.timeslept);
+
+        timeslept.setText(nimi);
         setSupportActionBar(topbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        ProfileInformation prof = ProfileInformation.getInstance();
-        int pituus = prof.getHeight();
-        Log.d(TAG, "pituus on" + pituus);
         menuitems.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, menulayout, topbar, R.string.drawerOpen, R.string.drawerClose);
         menulayout.addDrawerListener(toggle);
@@ -72,6 +73,10 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
     public void ravintoButtonPressed(View V) {
         Intent ravinto = new Intent(this, RavintoSivu.class);
         startActivity(ravinto);
+    }
+
+    public void getName(ProfileActivity profileActivity) {
+        nimi = profileActivity.profileInformation.getName();
     }
 
     @Override

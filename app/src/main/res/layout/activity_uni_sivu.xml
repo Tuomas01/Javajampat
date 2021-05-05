@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:cotext=".MainActivity"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@drawable/nightSleepWp">
+
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
@@ -179,13 +181,85 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <TextView
-            android:id="@+id/timeslept"
+            android:id="@+id/unenMaaraText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Syöttämäsi unenmäärä oli..."
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/appBarLayoutBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appBarLayoutTop"
+            app:layout_constraintVertical_bias="0.264" />
+
+        <TextView
+            android:id="@+id/textViewViesti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hei, "
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/appBarLayoutBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appBarLayoutTop"
+            app:layout_constraintVertical_bias="0.177" />
+
+        <TextView
+            android:id="@+id/naytaNimi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Nimi)"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/appBarLayoutBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.568"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.177" />
+
+        <TextView
+            android:id="@+id/uniTunnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Syötetty unenmäärä)"
+            android:textColor="@color/white"
+            android:textSize="23sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/appBarLayoutTop" />
+            app:layout_constraintTop_toTopOf="@+id/appBarLayoutTop"
+            app:layout_constraintVertical_bias="0.367" />
+
+        <TextView
+            android:id="@+id/uniVastaus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Et ole nukkunut tarpeeksi!"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/appBarLayoutBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.464" />
+
+        <TextView
+            android:id="@+id/uniVastaus2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Olet nukkunut tarpeeksi! :)"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appBarLayoutTop"
+            app:layout_constraintVertical_bias="0.515" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
