@@ -37,6 +37,8 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
     EditText profileCalories;
     EditText profileHeight;
     EditText profileWeight;
+    EditText unisivunimi;
+
     public static String name;
     int age;
     int sleep;
