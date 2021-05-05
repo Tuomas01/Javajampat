@@ -25,7 +25,6 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
     NavigationView menuitems;
     TextView timeslept;
     String nimi;
-    TextView unisivunimi;
     EditText profileName;
 
     /**
@@ -42,7 +41,6 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
         menulayout = findViewById(R.id.drawerLayout);
         menuitems = findViewById(R.id.menuView);
         sleepIcon = findViewById(R.id.sleepButton);
-        unisivunimi = findViewById(R.id.naytaNimi);
         profileName = findViewById(R.id.nameInput);
 
         Intent intent= getIntent();

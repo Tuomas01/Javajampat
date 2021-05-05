@@ -184,54 +184,37 @@
             android:id="@+id/textViewViesti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hei, "
+            android:text="Hei, Arvoisa käyttäjä"
             android:textColor="@color/white"
             android:textSize="19sp"
             app:layout_constraintBottom_toBottomOf="@+id/appBarLayoutBottom"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.318"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/appBarLayoutTop"
             app:layout_constraintVertical_bias="0.197" />
 
         <TextView
-            android:id="@+id/naytaNimi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Arvoisa käyttäjä"
-            android:textColor="@color/white"
-            android:textSize="19sp"
-            app:layout_constraintBottom_toBottomOf="@+id/appBarLayoutBottom"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.622"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.197" />
-
-        <TextView
             android:id="@+id/uniTunnit"
-            android:layout_width="325dp"
+            android:layout_width="350dp"
             android:layout_height="60dp"
             android:text="- Hyvä ja suositeltu unenmäärä olisi noin 6-9 tuntia."
             android:textColor="@color/white"
             android:textSize="19sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.542"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/appBarLayoutTop"
             app:layout_constraintVertical_bias="0.275" />
 
         <TextView
             android:id="@+id/textView12"
-            android:layout_width="334dp"
+            android:layout_width="350dp"
             android:layout_height="56dp"
             android:text="- Liian vähäinen unenmäärä huonontaa päiväsi suorituskykyä."
             android:textColor="@color/white"
             android:textSize="19sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.615"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.39" />
