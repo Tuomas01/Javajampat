@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:cotext=".MainActivity"
     android:fitsSystemWindows="true"
-    android:background="@drawable/nightSleepWp">
+    android:background="@drawable/nightsleepwp">
 
 
     <com.google.android.material.navigation.NavigationView
@@ -184,7 +184,7 @@
             android:id="@+id/unenMaaraText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Syöttämäsi unenmäärä oli..."
+            android:text="@string/unenmaarainput"
             android:textColor="@color/white"
             android:textSize="23sp"
             app:layout_constraintBottom_toBottomOf="@+id/appBarLayoutBottom"

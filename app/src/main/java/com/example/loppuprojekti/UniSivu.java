@@ -33,9 +33,7 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
         menulayout = findViewById(R.id.drawerLayout);
         menuitems = findViewById(R.id.menuView);
         sleepIcon = findViewById(R.id.sleepButton);
-        timeslept = findViewById(R.id.timeslept);
 
-        timeslept.setText(nimi);
         setSupportActionBar(topbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 

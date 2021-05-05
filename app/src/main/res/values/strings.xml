@@ -24,4 +24,5 @@
     <string name="unisivu">Unisivu</string>
     <string name="profiilisivu">Profiilisivu</string>
     <string name="harjoitukset">Harjoitukset</string>
+    <string name="unenmaarainput">Syöttämäsi unenmäärä oli...</string>
 </resources>
