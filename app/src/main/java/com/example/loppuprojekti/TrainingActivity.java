@@ -62,6 +62,7 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
         menuitems.setCheckedItem(R.id.addnew);
 
         trainingIcon.setBackgroundColor(0xFF2196F3);
+        menuitems.setCheckedItem(R.id.trainingshortcut);
 
         //ArrayList ja uusi harjoitus listalle
         harjoitukset = new ArrayList<String>();
@@ -137,6 +138,11 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
                 Intent training = new Intent(this, AddTrainingActivity.class);
                 startActivity(training);
                 Log.d(TAG, "training selected");
+                break;
+            case R.id.trainingshortcut:
+                Intent trainingPage = new Intent(this, TrainingActivity.class);
+                startActivity(trainingPage);
+                Log.d(TAG, "trainingsivu selected");
                 break;
             case R.id.ravintoshortcut:
                 Intent ravinto = new Intent(this, RavintoSivu.class);

@@ -50,6 +50,7 @@ public class AddTrainingActivity extends AppCompatActivity {
         toggle.syncState();
 
         //menuitems.setNavigationItemSelectedListener(this);
+        menuitems.setCheckedItem(R.id.addnew);
 
         //preferences = getSharedPreferences(sharedPreferenceName, Context.MODE_PRIVATE);
 

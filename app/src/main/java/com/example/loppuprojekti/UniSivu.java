@@ -93,6 +93,11 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
                 startActivity(training);
                 Log.d(TAG, "training selected");
                 break;
+            case R.id.trainingshortcut:
+                Intent trainingPage = new Intent(this, TrainingActivity.class);
+                startActivity(trainingPage);
+                Log.d(TAG, "trainingsivu selected");
+                break;
             case R.id.ravintoshortcut:
                 Intent ravinto = new Intent(this, RavintoSivu.class);
                 startActivity(ravinto);
