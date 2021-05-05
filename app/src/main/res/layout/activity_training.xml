@@ -21,6 +21,19 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <TextView
+            android:id="@+id/textViewProfiili3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Viimeisin harjoitus"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayoutTop"
+            app:layout_constraintVertical_bias="0.04000002" />
+
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayoutTop"
             android:layout_width="match_parent"
@@ -179,26 +192,27 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView
-            android:id="@+id/harjoitus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Viimeisin harjoitus"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.17000002" />
-
         <ListView
             android:id="@+id/harjoitukset"
-            android:layout_width="317dp"
-            android:layout_height="448dp"
+            android:layout_width="339dp"
+            android:layout_height="276dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.618" />
+            app:layout_constraintVertical_bias="0.35000002" />
+
+        <Button
+            android:id="@+id/uusi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="newTraining"
+            android:text="Lisää uusi harjoitus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.69" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -64,7 +64,7 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
         trainingIcon.setBackgroundColor(0xFF2196F3);
         menuitems.setCheckedItem(R.id.trainingshortcut);
 
-        //ArrayList ja uusi harjoitus listalle
+        //ArrayListin luonti ja uusi harjoitus listalle
         harjoitukset = new ArrayList<String>();
         SharedPreferences sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE);
         String value = sharedPreferences.getString("Viimeisin","Ei harjoituksia");
@@ -94,31 +94,70 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
 
     }
 
+    /**
+     * Avaa harjoitussivun aktiviteetin.
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Niko Ala-aho
+     */
     public void openTraining(View V) {
         Intent training = new Intent(this, TrainingActivity.class);
         startActivity(training);
     }
 
+    /**
+     * Avaa aktiviteetin, uuden harjoituksen lisäämiseen.
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Niko Ala-aho
+     */
+    public void newTraining(View V){
+        Intent addtraining = new Intent(this, AddTrainingActivity.class);
+        startActivity(addtraining);
+    }
+
+    /**
+     * Avaa profiilisivun aktiviteetin.
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Niko Ala-aho
+     */
     public void profileButtonPressed(View V) {
         Intent profile = new Intent(this, ProfileActivity.class);
         startActivity(profile);
     }
 
+    /**
+     * Avaa kotisivun aktiviteetin.
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Niko Ala-aho
+     */
     public void homeButtonPressed(View V) {
         Intent home = new Intent(this, MainActivity.class);
         startActivity(home);
     }
 
+    /**
+     * Avaa unisivun aktiviteetin.
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Niko Ala-aho
+     */
     public void uniButtonPressed(View V) {
         Intent uni = new Intent(this, UniSivu.class);
         startActivity(uni);
     }
 
+    /**
+     * Avaa ravintosivun aktiviteetin.
+     * @param V tekee mahdolliseksi liittää metodin widgettin layoutissa esim. onClick.
+     * @author Niko Ala-aho
+     */
     public void ravintoButtonPressed(View V) {
         Intent ravinto = new Intent(this, RavintoSivu.class);
         startActivity(ravinto);
     }
 
+    /**
+     * Kun emulaattorin nuolinappulaa eli takaisin nappulaa painetaan, jos drawer menu on auki sulje se, muutoin käytä takaisin nappulaa normaalisti.
+     * @author Niko Ala-aho
+     */
     @Override
     public void onBackPressed() {
 
@@ -130,6 +169,12 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
         }
     }
 
+    /**
+     * Lisää drawer menussa oleviin nappuloihin toiminnallisuudet eli, kun menussa olevia nappuloita painetaan avaa nappulaa vastaava aktiviteetti
+     * @param item nappula, joka haetaan id:n avulla
+     * @return palauttaa true, eli kun nappula valitaan menusta palauttaa true
+     * @author Niko Ala-aho
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 

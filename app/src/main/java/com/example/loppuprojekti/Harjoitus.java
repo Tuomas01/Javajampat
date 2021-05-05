@@ -25,6 +25,8 @@ public class Harjoitus {
     }
 
     public String toString(){
-        return "Harjoituksen kesto " + this.kesto + " minuuttia, kaloreita poltettu " + this.kalorit + ", askeleita " + this.askeleet;
+        return "Harjoituksen kesto: " + this.kesto + " minuuttia" + "\n" +
+                "Kaloreita poltettu: " + this.kalorit +  " kcal\n" +
+                "Askeleita: " +  this.askeleet;
     }
 }
