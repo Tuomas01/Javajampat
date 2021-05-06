@@ -104,13 +104,13 @@ public class UniSivu extends AppCompatActivity implements NavigationView.OnNavig
         startActivity(ravinto);
     }
 
-    public void getName(ProfileActivity profileActivity) {
+    /*public void getName(ProfileActivity profileActivity) {
         nimi = profileActivity.profileInformation.getName();
     }
+     */
     /**
      * Kun emulaattorin nuolinappulaa eli takaisin nappulaa painetaan, jos drawer menu on auki sulje se, muutoin käytä takaisin nappulaa normaalisti.
      * @author Tuomas Alatalo
-     */
     @Override
     public void onBackPressed() {
         if(menulayout.isDrawerOpen(GravityCompat.START)) {

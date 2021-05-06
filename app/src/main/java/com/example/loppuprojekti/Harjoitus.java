@@ -19,14 +19,29 @@ public class Harjoitus {
         this.askeleet = askeleet;
     }
 
+    /**
+     * Palauttaa harjoituksen keston
+     * @return palauttaa harjoituksen keston
+     * @author Tuomas Heikkilä
+     */
     public int getKesto(){
         return this.kesto;
     }
 
+    /**
+     * Palauttaa harjoituksen kalorit
+     * @return palauttaa harjoituksen kalorit
+     * @author Tuomas Heikkilä
+     */
     public int getKalorit(){
         return this.kalorit;
     }
 
+    /**
+     * Palauttaa harjoituksen askeleet
+     * @return palauttaa harjoituksen askeleet
+     * @author Tuomas Heikkilä
+     */
     public int getAskeleet(){
         return this.askeleet;
     }

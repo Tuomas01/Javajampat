@@ -34,6 +34,11 @@ public class AddTrainingActivity extends AppCompatActivity implements Navigation
     private final String sharedPreferenceName = "Harjoitukset";
     private final String messageKey = "Viimeisin";
 
+    /**
+     * Metodi jota kutsutaan sovelluksen luodessa
+     * @param savedInstanceState palauttaa aktiviteetin aikaisempaan tilaan tietyissä tapauksissa
+     * @author Tuomas Heikkilä
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -149,6 +154,10 @@ public class AddTrainingActivity extends AppCompatActivity implements Navigation
         startActivity(ravinto);
     }
 
+    /**
+     * Kun emulaattorin nuolinappulaa eli takaisin nappulaa painetaan, jos drawer menu on auki sulje se, muutoin käytä takaisin nappulaa normaalisti.
+     * @author Tuomas Heikkilä
+     */
     @Override
     public void onBackPressed() {
 

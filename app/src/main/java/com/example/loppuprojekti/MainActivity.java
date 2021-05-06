@@ -101,10 +101,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(ravinto);
     }
 
-    public void newFromMenuPressed(View V) {
+    /*public void newFromMenuPressed(View V) {
         Intent addTraining = new Intent(this, AddTrainingActivity.class);
         startActivity(addTraining);
     }
+     */
     /**
      * Kun emulaattorin nuolinappulaa eli takaisin nappulaa painetaan, jos drawer menu on auki sulje se, muutoin käytä takaisin nappulaa normaalisti.
      * @author Tuomas Alatalo

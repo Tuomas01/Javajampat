@@ -38,6 +38,11 @@ public class TrainingActivity extends AppCompatActivity implements NavigationVie
     private final String sharedPreferenceName = "HarjoitusLista";
     private final String messageKey2 = "vika";
 
+    /**
+     * Metodi jota kutsutaan sovelluksen luodessa
+     * @param savedInstanceState palauttaa aktiviteetin aikaisempaan tilaan tietyissä tapauksissa
+     * @author Tuomas Heikkilä
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

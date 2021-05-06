@@ -59,7 +59,6 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
     private String caloriessavedpref;
     private String heightsavedpref;
     private String weightsavedpref;
-    TextView saved;
 
     // SuppressLint ignoraa tietyt ehdotukset. Ohjelma ehdottaa, että loisin aliluokkia,
     // jotta saisin ohjelman toimimaan myös käyttäjillä, jotka ovat sokeita
@@ -86,7 +85,6 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         topbar = findViewById(R.id.toolbar);
         menulayout = findViewById(R.id.drawerLayout);
         menuitems = findViewById(R.id.menuView);
-        saved = findViewById(R.id.tiedotTallennettu);
         // hae layoutin taustakuva resource tiedostoista ja aseta se muuttujaan
         Drawable sky = getResources().getDrawable(R.drawable.sky);
         // aseta sky muuttujalle opacityä
@@ -276,7 +274,6 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         weight = Integer.parseInt(profileWeight.getText().toString());
         profileInformation = new ProfileInformation(name, age, sleep, calories, height, weight);
         Log.d(TAG, profileInformation.toString());
-        saved.setText("Tietojen tallentaminen onnistui");
     }
 
     /**
